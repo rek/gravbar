@@ -6,6 +6,7 @@ var mobileFound = /Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini
 var libsToLoad = [
     'jquery',
     'lodash',
+    'Fireable',
     'menu',
     'play',
     'phaser'

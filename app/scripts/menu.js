@@ -3,14 +3,14 @@
 
 var menuState = {
     create: function() {
-        app.version = '0.1.0';
+        app.version = '0.2.0';
 
         // Call the 'start' function when pressing the spacebar
         // var space_key = this.game.input.keyboard.addKey(Phaser.Keyboard.SPACEBAR);
         // space_key.onDown.add(this.start, this);
         game.input.onTap.add(this.start, this);
 
-        var text = this.game.add.text(game.world.centerX, 90, 'GRAVtoo', {
+        var text = this.game.add.text(game.world.centerX, 90, 'GRAVtoo - Bar version', {
             font: '40px Arial',
             fill: '#999',
             'strokeThickness': 2
@@ -19,7 +19,7 @@ var menuState = {
         text.anchor.setTo(0.5, 0.5);
 
         text = this.game.add.text(game.world.centerX, game.world.centerY,
-            '- Tap to start -', {
+            '- Arrow keys and space -', {
             font: '30px Arial',
             fill: '#333'
         });
