@@ -180,7 +180,7 @@ var playState = {
     render: function() {
         game.debug.text('Fuel: ' + this.ship.fuel, 32, 30);
         // game.debug.text('Shield: ' + Math.floor(this.ship.shield / 3), 32, 45);
-        game.debug.text('Shield on: ' + this.ship.shielded, 32, 60);
+        game.debug.text('Tractor on: ' + this.ship.shielded, 32, 60);
         // game.debug.text('Shield CD: ' + this.ship.shieldCooldown, 32, 75);
     }
 };

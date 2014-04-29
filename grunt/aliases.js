@@ -1,14 +1,9 @@
-/*global grunt */
 'use strict';
 
 module.exports = {
-    'default': [
-        'watch'
-    ],
-
     'test': [
         // 'clean:server',
-        'jshint',
+        'newer:jshint',
 
         'connect:test',
         'mocha_phantomjs',
@@ -16,8 +11,8 @@ module.exports = {
 
     'build': [
         'clean:dist',
-        'dustjs',          // dust -> js
-        'less:production', // less -> css
+        'newer:dustjs',    // dust -> js
+        'newer:less:production', // less -> css
         'useminPrepare',   // concat to prepare for cssmin
         'concurrent:dist', // runs: imagemin, svgmin, htmlmin and cssmin
             // 'concat',
@@ -32,18 +27,14 @@ module.exports = {
         'clean:postBuild'
     ],
 
-    'server': function(target) {
-        if (target === 'dist') {
-            return grunt.task.run(['build', 'open', 'connect:dist:keepalive']);
-        }
+    'server:dev': [
+        // if (target === 'dist') {
+            // return grunt.task.run(['build', 'open', 'connect:dist:keepalive']);
+        // }
 
-        grunt.task.run([
-            'clean:server',
-            'concurrent:server',
-            'livereload-start',
-            'connect:livereload',
-            'open',
-            'watch'
-        ]);
-    }
+        'clean:server',
+        'newer:dustjs',
+        'newer:less:production',
+        'concurrent:server'
+    ]
 };

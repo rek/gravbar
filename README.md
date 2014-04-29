@@ -1,24 +1,16 @@
-# Generated on 2014-04-10 using generator-grunt-simple 0.1.0
+# Grav . But for a bar.
 
-# gravtoo [![Build Status](https://secure.travis-ci.org/rekarnar/gravtoo.png?branch=master)](https://travis-ci.org/rekarnar/gravtoo)
+### Generated on 2014-04-10 using generator-grunt-simple 0.1.0
 
-> a Marionette app with the Module pattern!
+## Overview.
 
-## Getting Started
-
-This guy:
-
-![](http://i.imgur.com/JHaAlBJ.png)
+To come.
 
 How to install
 
 ```
 $ git clone xxx
 ```
-
-### Something else
-
-Should go here
 
 ## License
 

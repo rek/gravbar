@@ -1,16 +1,7 @@
-/*global Phaser, navigator*/
+/*global Phaser, navigator, window */
 'use strict';
 
 var mobileFound = /Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(navigator.userAgent);
-
-var libsToLoad = [
-    'jquery',
-    'lodash',
-    'Fireable',
-    'menu',
-    'play',
-    'phaser'
-];
 
 var game = {},
     app = {};
@@ -21,10 +12,18 @@ if (mobileFound) {
     // libsToLoad.push('../cordova');
 } else {
     // console.log('NOT MOBILE');
-    libsToLoad.push('//localhost:35729/livereload.js');
+    //libsToLoad.push('//localhost:35729/livereload.js');
 }
 
-require(libsToLoad, function($) {
+define(function(require) {
+// require(libsToLoad, function($) {
+    var $ = require('jquery'),
+        _ = require('lodash');
+    require('Fireable');
+    require('menu');
+    require('play');
+    require('phaser');
+
     app.dims = {
         maxWidth: 600,
         maxHeight: 490

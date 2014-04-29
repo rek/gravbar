@@ -1,7 +1,5 @@
 'use strict';
 
-require('grunt-contrib-livereload/lib/utils').livereloadSnippet;
-
 // # Globbing
 // for performance reasons we're only matching one level down:
 // 'test/spec/{,*/}*.js'
@@ -13,8 +11,15 @@ module.exports = function(grunt) {
     require('time-grunt')(grunt);
 
     require('load-grunt-config')(grunt, {
-        data: {
-            // for example we can add config here too:
+        data: { //data passed into config.
+            // jasmine: {
+            //     all: {
+            //         /*src: '',*/
+            //         options: {
+            //             specs: 'test/spec/{,*/}*.js'
+            //         }
+            //     }
+            // },
             mocha: {
                 all: {
                     options: {
@@ -25,9 +30,6 @@ module.exports = function(grunt) {
                         urls: ['http://localhost:8888/index.html']
                     }
                 }
-            },
-            'mocha_phantomjs': {
-                all: ['app/scripts/modules/{,*/}test/*.html']
             }
         }
     });
